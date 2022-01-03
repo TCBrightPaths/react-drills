@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [meals, setMeals] = useState([
+    {meal: 'chicken picante'},
+    {meal: "pasta primavera"},
+    {meal: "potato au gratin"},
+    {meal: "supreme pizza"},
+    {meal: "chicken and sausage gumbo"}
+  ])
+
+  const [input, setInput] = useState("")
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Meals To Try</h1>
+
+      <input 
+      type="text"
+      value={input}
+      onChange={meals.filter((meal) => meal[0] === )}
+      />
+
+      {meals.map(({meal, index}) => (
+        <div>
+          <h2 key={index}>{meal}</h2>
+        </div>
+      ))}
+         
     </div>
   );
 }
